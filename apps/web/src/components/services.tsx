@@ -5,26 +5,29 @@ const SERVICES: { title: string; description: string; icon: LucideIcon }[] = [
   {
     title: "Freight Forwarding",
     description:
-      "Reliable transportation of goods by air, land, or sea. We handle logistics, customs clearance, and delivery.",
+      "End-to-end cargo management by air, sea, and land. We coordinate customs clearance, documentation, and last-mile delivery so your shipments arrive on time, every time.",
     icon: Truck,
   },
   {
-    title: "Warehousing and Storage",
+    title: "Warehousing & Storage",
     description:
-      "Secure, climate-controlled storage with flexible options and real-time inventory management.",
+      "Climate-controlled facilities with 24/7 security, flexible short and long-term storage, and real-time inventory visibility through our digital management platform.",
     icon: Warehouse,
   },
   {
     title: "Supply Chain Management",
     description:
-      "Customized logistics solutions to optimize your supply chain, reduce costs, and improve efficiency.",
+      "Strategic logistics consulting that maps, optimises, and scales your entire supply chain — cutting costs, reducing lead times, and building resilience into every link.",
     icon: Workflow,
   },
 ];
 
 export const Services = () => (
   <section className="mx-auto w-[min(1180px,calc(100%-2rem))] py-16">
-    <SectionHeader tag="Types of Transport" />
+    <SectionHeader
+      tag="What We Offer"
+      heading={<>Full-spectrum logistics, <span className="text-[#EE1C4D]">built around</span> your business</>}
+    />
     <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-0">
       {SERVICES.map((service, index) => (
         <div

@@ -50,7 +50,7 @@ export const Hero = () => (
 
       <div className="relative z-10 mx-auto flex h-full w-[min(1180px,calc(100%-3rem))] flex-col justify-center pt-28 pb-12">
       <h1 className="max-w-2xl text-balance font-bold text-5xl text-white leading-[1.05] tracking-tight sm:text-6xl">
-        Improving efficiency with logistics.
+        Your cargo, delivered with precision.
       </h1>
 
       {/* Search bar */}
@@ -93,9 +93,9 @@ export const Hero = () => (
       {/* Sub row */}
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-sm text-sm text-white/80 leading-relaxed">
-          Reliable transport. Real-time tracking.
+          Global reach. Real-time visibility.
           <br />
-          Tailored logistics for your business.
+          Logistics solutions built for your business.
         </p>
         <button
           type="button"

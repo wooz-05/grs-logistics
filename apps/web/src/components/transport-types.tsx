@@ -29,7 +29,10 @@ const TransportCard = ({ title, src }: { title: string; src: string }) => (
 
 export const TransportTypes = () => (
   <section className="mx-auto flex min-h-dvh w-[min(1180px,calc(100%-2rem))] flex-col py-16">
-    <SectionHeader tag="Types of Transport" />
+    <SectionHeader
+      tag="How We Move"
+      heading={<>Move anything, <span className="text-[#EE1C4D]">anywhere</span> — by any mode</>}
+    />
     <div className="mt-10 grid flex-1 gap-5 sm:grid-cols-2 sm:grid-rows-2">
       {TRANSPORT.map(({ title, src }) => (
         <TransportCard key={title} title={title} src={src} />

@@ -2,12 +2,11 @@ import { ArrowUpRightIcon } from "./icons";
 
 type SectionHeaderProps = {
   tag: string;
+  heading: React.ReactNode;
   light?: boolean;
 };
 
-// The recurring section masthead: a small "↗ tag" eyebrow on the left and the
-// right-aligned headline that appears throughout the design.
-export const SectionHeader = ({ tag, light = false }: SectionHeaderProps) => (
+export const SectionHeader = ({ tag, heading, light = false }: SectionHeaderProps) => (
   <div
     className={`flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between ${
       light ? "text-white" : "text-[#242527]"
@@ -22,8 +21,7 @@ export const SectionHeader = ({ tag, light = false }: SectionHeaderProps) => (
       {tag}
     </span>
     <h2 className="max-w-xl text-pretty text-right font-bold text-3xl leading-tight tracking-tight sm:text-4xl">
-      From <span className="text-[#EE1C4D]">cargo transit</span> to every
-      unparallelled support
+      {heading}
     </h2>
   </div>
 );
