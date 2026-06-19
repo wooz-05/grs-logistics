@@ -28,18 +28,24 @@ export const Hero = () => (
   <section className="bg-white p-3 sm:p-4">
     {/* Floating rounded hero panel — fills the screen with an even white gap on all sides */}
     <div className="relative isolate h-[calc(100dvh-1.5rem)] min-h-[600px] overflow-hidden rounded-[28px] bg-neutral-300 sm:h-[calc(100dvh-2rem)]">
-      {/* Background photo placeholder (real image to be supplied later) */}
+      {/* Background video */}
+      <video
+        className="absolute inset-0 size-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/transport/sea.png"
+      >
+        <source src="/hero.webm" type="video/webm" />
+      </video>
+      {/* Darkening layers — a light scrim plus a gradient keep the white
+          headline and search bar readable without dimming the clip too much */}
+      <div aria-hidden className="absolute inset-0 bg-[#242527]/30" />
       <div
         aria-hidden
-        className="absolute inset-0 bg-neutral-300"
-        style={{
-          backgroundImage:
-            "repeating-linear-gradient(45deg, rgba(0,0,0,0.04) 0 14px, transparent 14px 28px)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-gradient-to-b from-[#242527]/70 via-[#242527]/45 to-[#242527]/75"
+        className="absolute inset-0 bg-gradient-to-b from-[#242527]/40 via-[#242527]/10 to-[#242527]/45"
       />
 
       <div className="relative z-10 mx-auto flex h-full w-[min(1180px,calc(100%-3rem))] flex-col justify-center pt-28 pb-12">

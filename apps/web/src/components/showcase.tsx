@@ -15,7 +15,7 @@ export const Showcase = () => (
     />
     <div className="relative mx-auto grid w-[min(1180px,calc(100%-2rem))] gap-12 py-16 lg:grid-cols-2">
       <div className="lg:pt-4">
-        <h2 className="max-w-md text-balance font-bold text-3xl text-[#242527] leading-tight tracking-tight sm:text-4xl">
+        <h2 className="max-w-xl text-pretty font-bold text-3xl text-[#242527] leading-tight tracking-tight sm:text-4xl">
           From <span className="text-[#EE1C4D]">cargo transit</span> to every
           unparallelled support
         </h2>

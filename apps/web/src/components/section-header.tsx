@@ -21,7 +21,7 @@ export const SectionHeader = ({ tag, light = false }: SectionHeaderProps) => (
       <ArrowUpRightIcon className="size-4 text-[#EE1C4D]" />
       {tag}
     </span>
-    <h2 className="max-w-md text-balance text-right font-bold text-3xl leading-tight tracking-tight sm:text-4xl">
+    <h2 className="max-w-xl text-pretty text-right font-bold text-3xl leading-tight tracking-tight sm:text-4xl">
       From <span className="text-[#EE1C4D]">cargo transit</span> to every
       unparallelled support
     </h2>
