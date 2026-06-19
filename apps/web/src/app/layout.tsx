@@ -9,15 +9,16 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "zenncore",
-  description: "A modern React UI library with Tailwind CSS support",
+  title: "GRS Logistics — Improving efficiency with logistics",
+  description:
+    "Reliable transport. Real-time tracking. Tailored logistics for your business — by sea, ground, rail, and air.",
 };
 
 export default ({ children }: LayoutProps<"/">) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.variable} bg-background font-body antialiased`}>
-        <ThemeProvider attribute="class">
+      <body className={`${geist.variable} bg-white font-body antialiased`}>
+        <ThemeProvider attribute="class" forcedTheme="light">
           <div className="isolate">{children}</div>
         </ThemeProvider>
       </body>
