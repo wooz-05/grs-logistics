@@ -77,10 +77,14 @@ export const WorldMapSection = () => (
           light
         />
       </div>
-      <div className="mt-auto flex flex-1 items-center">
+      <div className="mt-auto flex flex-1 flex-col justify-center gap-4">
         <div className="mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))]">
           <WorldMap dots={ROUTES} lineColor="#EE1C4D" />
         </div>
+        <p className="mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))] text-center text-neutral-500 text-sm leading-relaxed mt-6">
+          GRS Logistics operates across <span className="text-neutral-300">150+ countries</span>, connecting major trade hubs through
+          sea, air, rail, and road — with real-time visibility at every step of the journey.
+        </p>
       </div>
     </div>
   </section>

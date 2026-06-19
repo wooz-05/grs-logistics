@@ -1,5 +1,6 @@
 import { Truck, Warehouse, Workflow, type LucideIcon } from "lucide-react";
 import { SectionHeader } from "./section-header";
+import { Reveal } from "./reveal";
 
 const SERVICES: { title: string; description: string; icon: LucideIcon }[] = [
   {
@@ -23,15 +24,17 @@ const SERVICES: { title: string; description: string; icon: LucideIcon }[] = [
 ];
 
 export const Services = () => (
-  <section className="mx-auto w-[min(1180px,calc(100%-2rem))] py-16">
+  <section className="flex min-h-dvh flex-col justify-center py-24">
+    <div className="mx-auto w-[min(1180px,calc(100%-2rem))]">
     <SectionHeader
       tag="What We Offer"
       heading={<>Full-spectrum logistics, <span className="text-[#EE1C4D]">built around</span> your business</>}
     />
     <div className="mt-12 grid gap-10 sm:grid-cols-3 sm:gap-0">
       {SERVICES.map((service, index) => (
-        <div
+        <Reveal
           key={service.title}
+          delay={0.1 + index * 0.12}
           className={`flex flex-col gap-4 sm:px-8 ${
             index > 0 ? "sm:border-neutral-200 sm:border-l" : ""
           } ${index === 0 ? "sm:pl-0" : ""}`}
@@ -43,8 +46,9 @@ export const Services = () => (
           <p className="text-neutral-500 text-sm leading-relaxed">
             {service.description}
           </p>
-        </div>
+        </Reveal>
       ))}
+    </div>
     </div>
   </section>
 );
