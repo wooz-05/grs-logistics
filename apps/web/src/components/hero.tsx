@@ -78,7 +78,7 @@ export const Hero = () => (
       {/* Infinite leftward marquee of GRS arrows behind the header */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-[1] flex items-start overflow-hidden opacity-20"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] flex items-start overflow-hidden opacity-10"
       >
         <div className="flex w-max shrink-0 animate-arrow-marquee">
           <ArrowRow />

@@ -22,7 +22,7 @@ const TransportCard = ({ title, src }: { title: string; src: string }) => (
       aria-hidden
       className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/5 to-black/30"
     />
-    <h3 className="relative font-semibold text-white text-xl drop-shadow-md">
+    <h3 className="relative font-bold text-white text-lg drop-shadow-md">
       {title}
     </h3>
   </article>

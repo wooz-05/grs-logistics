@@ -10,13 +10,13 @@ const GrsArrow = () => (
 // The GRS arrow mark (same as the hero marquee), stacked for the vertical marquee
 const MarqueeArrow = () => (
   <svg
-    width="120"
-    height="100"
+    width="180"
+    height="150"
     viewBox="0 0 30 25"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden
-    className="mb-[7px] shrink-0"
+    className="mb-[10px] shrink-0"
   >
     <path d="M29.8893 24.855L29.8893 0L4.84439 -1.09475e-06L29.8893 24.855Z" fill="#242527" />
     <path d="M0 16.0262H4.05505C6.93862 16.0262 9.70057 14.8643 11.7172 12.8031L13.075 11.4152L19.434 17.6366L18.0761 19.0243C14.386 22.7961 9.33175 24.9222 4.05505 24.9222H0V16.0262Z" fill="#242527" />
@@ -75,7 +75,7 @@ export const Showcase = () => (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="mx-auto h-full w-[min(1180px,calc(100%-2rem))]">
         <div className="relative h-full w-1/2">
-          <div className="absolute inset-y-0 left-0 flex w-32 justify-center overflow-hidden opacity-[0.03]">
+          <div className="absolute inset-y-0 left-0 flex w-48 justify-center overflow-hidden opacity-[0.03]">
             <div className="flex h-max shrink-0 flex-col animate-marquee-y">
               <ArrowColumn />
               <ArrowColumn />
@@ -93,34 +93,37 @@ export const Showcase = () => (
           <div>
             <Reveal><GrsTag label="Our Capabilities" /></Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-4 max-w-md text-pretty font-bold text-4xl text-[#242527] leading-tight tracking-tight sm:text-5xl">
-                Every shipment backed by{" "}
-                <span className="text-[#EE1C4D]">end-to-end</span> expertise
+              <h2 className="mt-4 line-clamp-2 max-w-lg text-pretty font-bold text-3xl text-[#242527] leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
+                <span className="text-[#EE1C4D]">End-to-end</span> expertise on
+                every shipment
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-md text-neutral-500 text-base leading-relaxed">
-                From the first mile to the last, GRS Logistics handles every
-                detail — documentation, compliance, real-time visibility, and
-                dedicated support — so you can focus on growing your business.
+                From first mile to last, we handle every detail — so you can
+                focus on growing your business.
               </p>
             </Reveal>
 
-            {/* Stat pills */}
-            <div className="mt-10 flex flex-wrap gap-4">
-              {[
-                { value: "150+", label: "Countries served" },
-                { value: "20K+", label: "Shipments / year" },
-                { value: "99.2%", label: "On-time delivery" },
-              ].map((stat, i) => (
-                <Reveal key={stat.label} delay={0.3 + i * 0.08} blur={false}>
-                  <div className="flex flex-col rounded-2xl border border-neutral-200 px-5 py-4">
-                    <span className="font-bold text-2xl text-[#242527]">{stat.value}</span>
-                    <span className="mt-0.5 text-neutral-500 text-xs">{stat.label}</span>
+            {/* Key stats — inline, divider-separated for a cleaner read */}
+            <Reveal delay={0.3} blur={false}>
+              <div className="mt-10 flex divide-x divide-neutral-200">
+                {[
+                  { value: "150+", label: "Countries served" },
+                  { value: "20K+", label: "Shipments / year" },
+                  { value: "99.2%", label: "On-time delivery" },
+                ].map((stat) => (
+                  <div key={stat.label} className="px-6 first:pl-0 last:pr-0">
+                    <div className="font-bold text-3xl text-[#242527] tracking-tight sm:text-4xl">
+                      {stat.value}
+                    </div>
+                    <div className="mt-1.5 text-neutral-400 text-xs uppercase tracking-wide">
+                      {stat.label}
+                    </div>
                   </div>
-                </Reveal>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
 

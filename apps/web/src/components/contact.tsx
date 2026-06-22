@@ -48,7 +48,7 @@ export const Contact = () => {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-4 max-w-md text-pretty font-bold text-3xl text-[#242527] leading-tight tracking-tight sm:text-4xl">
+            <h2 className="mt-4 line-clamp-2 max-w-lg text-pretty font-bold text-3xl text-[#242527] leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
               Let's move your cargo <span className="text-[#EE1C4D]">forward</span>
             </h2>
           </Reveal>
