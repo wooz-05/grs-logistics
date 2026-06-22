@@ -48,6 +48,41 @@ export const ArrowUpRightIcon = (props: IconProps) => (
   </svg>
 );
 
+export const CheckIcon = (props: IconProps) => (
+  <svg viewBox="0 0 24 24" {...base} {...props}>
+    <path d="m5 12 4.5 4.5L19 7" />
+  </svg>
+);
+
+export const ChevronLeftIcon = (props: IconProps) => (
+  <svg viewBox="0 0 24 24" {...base} {...props}>
+    <path d="m14 7-5 5 5 5" />
+  </svg>
+);
+
+export const ChevronRightIcon = (props: IconProps) => (
+  <svg viewBox="0 0 24 24" {...base} {...props}>
+    <path d="m10 7 5 5-5 5" />
+  </svg>
+);
+
+export const CalendarIcon = (props: IconProps) => (
+  <svg viewBox="0 0 24 24" {...base} {...props}>
+    <rect x="3" y="5" width="18" height="16" rx="2" />
+    <path d="M3 9h18" />
+    <path d="M8 3v4" />
+    <path d="M16 3v4" />
+  </svg>
+);
+
+export const BoxIcon = (props: IconProps) => (
+  <svg viewBox="0 0 24 24" {...base} {...props}>
+    <path d="M21 8 12 3 3 8v8l9 5 9-5V8Z" />
+    <path d="m3 8 9 5 9-5" />
+    <path d="M12 13v8.5" />
+  </svg>
+);
+
 export const ChevronDownIcon = (props: IconProps) => (
   <svg viewBox="0 0 24 24" {...base} {...props}>
     <path d="m6 9 6 6 6-6" />

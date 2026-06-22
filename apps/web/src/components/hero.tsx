@@ -1,28 +1,4 @@
-import { PinIcon, SearchIcon, SwapIcon, ChevronDownIcon } from "./icons";
-
-const SearchField = ({
-  icon,
-  value,
-  muted = false,
-  trailing,
-}: {
-  icon?: React.ReactNode;
-  value: string;
-  muted?: boolean;
-  trailing?: React.ReactNode;
-}) => (
-  <div className="flex min-w-0 flex-1 items-center gap-2.5 px-4">
-    {icon && <span className="shrink-0 text-[#EE1C4D]">{icon}</span>}
-    <span
-      className={`truncate text-sm ${muted ? "text-neutral-400" : "text-[#242527]"}`}
-    >
-      {value}
-    </span>
-    {trailing && <span className="ml-auto shrink-0">{trailing}</span>}
-  </div>
-);
-
-const Divider = () => <span className="h-7 w-px shrink-0 bg-neutral-200" />;
+import { SearchBar } from "./search-bar";
 
 // The GRS arrow mark, sized for the hero band
 const HeroArrow = () => (
@@ -92,41 +68,7 @@ export const Hero = () => (
       </h1>
 
       {/* Search bar */}
-      <div className="mt-10 flex flex-col gap-1.5 rounded-2xl bg-white p-1.5 shadow-xl shadow-black/10 sm:flex-row sm:items-center sm:rounded-full">
-        <SearchField
-          icon={<PinIcon className="size-4" />}
-          value="City, terminal, ZIP code etc."
-          muted
-        />
-        <button
-          type="button"
-          aria-label="Swap origin and destination"
-          className="hidden size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-neutral-500 transition-colors hover:bg-neutral-200 sm:flex"
-        >
-          <SwapIcon className="size-4" />
-        </button>
-        <Divider />
-        <SearchField
-          icon={<PinIcon className="size-4" />}
-          value="City, terminal, ZIP code etc."
-          muted
-        />
-        <Divider />
-        <SearchField value="16 Jun 2026" />
-        <Divider />
-        <SearchField
-          value="FCL, 20' ST"
-          trailing={<ChevronDownIcon className="size-4 text-neutral-400" />}
-        />
-        <button
-          type="button"
-          aria-label="Search"
-          className="flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#EE1C4D] px-5 font-medium text-sm text-white transition-colors hover:bg-[#d2123f] sm:size-12 sm:px-0"
-        >
-          <SearchIcon className="size-5" />
-          <span className="sm:hidden">Search</span>
-        </button>
-      </div>
+      <SearchBar />
 
       {/* Sub row */}
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
