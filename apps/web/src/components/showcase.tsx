@@ -1,4 +1,3 @@
-import { Placeholder } from "./placeholder";
 import { Reveal } from "./reveal";
 
 const GrsArrow = () => (
@@ -46,22 +45,27 @@ const CARDS = [
   {
     title: "Customs Clearance",
     description: "Full documentation handling and regulatory compliance across every border.",
+    image: "/cards/customs.jpg",
   },
   {
     title: "Real-Time Tracking",
     description: "Live shipment visibility from origin to destination, 24/7.",
+    image: "/cards/tracking.jpg",
   },
   {
     title: "Cold Chain Logistics",
     description: "Temperature-controlled transport for pharmaceuticals, food, and sensitive cargo.",
+    image: "/cards/coldchain.jpg",
   },
   {
     title: "Project Cargo",
     description: "Heavy-lift and oversized freight solutions for the most complex shipments.",
+    image: "/cards/project.jpg",
   },
   {
     title: "Last-Mile Delivery",
     description: "Reliable final-leg distribution that gets your goods to the right hands on time.",
+    image: "/cards/lastmile.jpg",
   },
 ];
 
@@ -125,7 +129,12 @@ export const Showcase = () => (
           {CARDS.map((card, index) => (
             <Reveal key={card.title} delay={index * 0.1}>
               <article className="group overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-sm transition-shadow hover:shadow-md">
-                <Placeholder className="aspect-[16/7] w-full" />
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  loading="lazy"
+                  className="aspect-[16/7] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
                 <div className="px-6 py-5">
                   <h3 className="font-bold text-[#242527] text-lg">{card.title}</h3>
                   <p className="mt-1.5 text-neutral-500 text-sm leading-relaxed">
