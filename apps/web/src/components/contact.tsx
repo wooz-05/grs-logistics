@@ -37,7 +37,7 @@ export const Contact = () => {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="contact" className="py-24">
+    <section id="contact" className="py-20 sm:py-28">
       <div className="mx-auto grid w-[min(1180px,calc(100%-2rem))] gap-12 lg:grid-cols-2 lg:gap-20">
         {/* Left — intro + contact details */}
         <div>
@@ -53,7 +53,7 @@ export const Contact = () => {
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-6 max-w-sm text-neutral-500 text-sm leading-relaxed">
+            <p className="mt-6 max-w-md text-neutral-500 text-base leading-relaxed">
               Tell us about your shipment and we'll get back to you within one
               business day with a tailored logistics solution.
             </p>

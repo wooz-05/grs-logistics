@@ -34,7 +34,7 @@ export const TransportTypes = () => (
       tag="How We Move"
       heading={<>Move anything, <span className="text-[#EE1C4D]">anywhere</span> — by any mode</>}
     />
-    <div className="mt-10 grid flex-1 gap-5 sm:grid-cols-2 sm:grid-rows-2">
+    <div className="mt-12 grid flex-1 gap-5 sm:grid-cols-2 sm:grid-rows-2">
       {TRANSPORT.map(({ title, src }, index) => (
         <Reveal key={title} delay={0.08 * index} className="min-h-[220px]">
           <TransportCard title={title} src={src} />

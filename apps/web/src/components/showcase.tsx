@@ -89,7 +89,7 @@ export const Showcase = () => (
       <div className="flex flex-col gap-0 lg:flex-row lg:items-start">
 
         {/* Left — sticky while cards scroll */}
-        <div className="top-0 py-24 lg:sticky lg:h-screen lg:w-1/2 lg:flex lg:items-center lg:pr-16">
+        <div className="top-0 py-20 sm:py-28 lg:sticky lg:h-screen lg:w-1/2 lg:flex lg:items-center lg:pr-16">
           <div>
             <Reveal><GrsTag label="Our Capabilities" /></Reveal>
             <Reveal delay={0.1}>
@@ -99,7 +99,7 @@ export const Showcase = () => (
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-6 max-w-sm text-neutral-500 text-sm leading-relaxed">
+              <p className="mt-6 max-w-md text-neutral-500 text-base leading-relaxed">
                 From the first mile to the last, GRS Logistics handles every
                 detail — documentation, compliance, real-time visibility, and
                 dedicated support — so you can focus on growing your business.
@@ -125,7 +125,7 @@ export const Showcase = () => (
         </div>
 
         {/* Right — scrolls past the sticky left */}
-        <div className="flex flex-col gap-6 py-24 lg:w-1/2">
+        <div className="flex flex-col gap-6 py-20 sm:py-28 lg:w-1/2">
           {CARDS.map((card, index) => (
             <Reveal key={card.title} delay={index * 0.1}>
               <article className="group overflow-hidden rounded-3xl border border-neutral-100 bg-white shadow-sm transition-shadow hover:shadow-md">

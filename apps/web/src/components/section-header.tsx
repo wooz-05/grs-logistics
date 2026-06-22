@@ -30,7 +30,7 @@ export const SectionHeader = ({ tag, heading, light = false }: SectionHeaderProp
       </span>
     </Reveal>
     <Reveal delay={0.1}>
-      <h2 className="max-w-xl text-pretty text-right font-bold text-3xl leading-tight tracking-tight sm:text-4xl">
+      <h2 className="max-w-xl text-pretty text-right font-bold text-3xl leading-[1.1] tracking-tight sm:text-4xl lg:text-5xl">
         {heading}
       </h2>
     </Reveal>

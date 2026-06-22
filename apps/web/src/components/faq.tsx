@@ -33,7 +33,7 @@ export const Faq = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="py-24">
+    <section className="bg-neutral-50 py-20 sm:py-28">
       <div className="mx-auto w-[min(1180px,calc(100%-2rem))]">
         <SectionHeader
           tag="FAQ"
