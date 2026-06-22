@@ -27,8 +27,8 @@ const Divider = () => <span className="h-7 w-px shrink-0 bg-neutral-200" />;
 // The GRS arrow mark, sized for the hero band
 const HeroArrow = () => (
   <svg
-    width="64"
-    height="53"
+    width="96"
+    height="80"
     viewBox="0 0 30 25"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

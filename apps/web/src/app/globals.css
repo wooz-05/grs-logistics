@@ -4,10 +4,17 @@
 @theme inline {
   --font-body: var(--font-geist);
   --animate-arrow-marquee: arrow-marquee 80s linear infinite;
+  --animate-arrow-marquee-vertical: arrow-marquee-vertical 80s linear infinite;
 
   @keyframes arrow-marquee {
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes arrow-marquee-vertical {
+    to {
+      transform: translateY(-50%);
     }
   }
 }

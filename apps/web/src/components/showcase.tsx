@@ -8,6 +8,33 @@ const GrsArrow = () => (
   </svg>
 );
 
+// The GRS arrow mark (same as the hero marquee), stacked for the vertical marquee
+const MarqueeArrow = () => (
+  <svg
+    width="80"
+    height="67"
+    viewBox="0 0 30 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden
+    className="mb-[5px] shrink-0"
+  >
+    <path d="M29.8893 24.855L29.8893 0L4.84439 -1.09475e-06L29.8893 24.855Z" fill="#242527" />
+    <path d="M0 16.0262H4.05505C6.93862 16.0262 9.70057 14.8643 11.7172 12.8031L13.075 11.4152L19.434 17.6366L18.0761 19.0243C14.386 22.7961 9.33175 24.9222 4.05505 24.9222H0V16.0262Z" fill="#242527" />
+  </svg>
+);
+
+// One repeating segment of the vertical marquee — stacked twice so the
+// -50% translateY shift loops seamlessly
+const ArrowColumn = () => (
+  <div className="flex shrink-0 flex-col items-center">
+    {Array.from({ length: 48 }).map((_, i) => (
+      // biome-ignore lint/suspicious/noArrayIndexKey: static decorative list
+      <MarqueeArrow key={i} />
+    ))}
+  </div>
+);
+
 const GrsTag = ({ label }: { label: string }) => (
   <span className="inline-flex items-center gap-1.5 font-medium text-neutral-500 text-sm">
     <GrsArrow />
@@ -40,14 +67,19 @@ const CARDS = [
 
 export const Showcase = () => (
   <section className="relative">
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-y-0 left-0 w-1/2 opacity-[0.03]"
-      style={{
-        backgroundImage:
-          "repeating-linear-gradient(115deg, #242527 0 2px, transparent 2px 26px)",
-      }}
-    />
+    {/* Vertical chevron marquee — subtle moving texture behind the left content */}
+    <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="mx-auto h-full w-[min(1180px,calc(100%-2rem))]">
+        <div className="relative h-full w-1/2">
+          <div className="absolute inset-y-0 left-0 flex w-24 justify-center overflow-hidden opacity-[0.05]">
+            <div className="flex h-max shrink-0 flex-col animate-arrow-marquee-vertical">
+              <ArrowColumn />
+              <ArrowColumn />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div className="relative mx-auto w-[min(1180px,calc(100%-2rem))]">
       <div className="flex flex-col gap-0 lg:flex-row lg:items-start">
