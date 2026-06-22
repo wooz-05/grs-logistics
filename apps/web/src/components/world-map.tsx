@@ -69,7 +69,7 @@ const ROUTES = [
 
 export const WorldMapSection = () => (
   <section className="bg-white p-3 sm:p-4">
-    <div className="relative flex h-[calc(100dvh-1.5rem)] min-h-[600px] flex-col overflow-hidden rounded-[28px] bg-[#1c1d1f] px-6 py-10 sm:h-[calc(100dvh-2rem)] sm:px-12 sm:py-12">
+    <div className="relative flex h-[calc(100dvh-1.5rem)] min-h-[600px] flex-col overflow-hidden rounded-[28px] bg-[#242527] px-6 py-10 sm:h-[calc(100dvh-2rem)] sm:px-12 sm:py-12">
       <div className="relative z-10 mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))]">
         <SectionHeader
           tag="Global Network"
@@ -83,7 +83,7 @@ export const WorldMapSection = () => (
         </div>
         <p className="mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))] text-center text-neutral-500 text-sm leading-relaxed">
           GRS Logistics operates across <span className="text-neutral-300">150+ countries</span>, connecting major trade hubs through
-          sea, air, rail, and road — with real-time visibility at every step of the journey.
+          sea, air, rail, and road, with real-time visibility at every step of the journey.
         </p>
       </div>
     </div>

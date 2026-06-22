@@ -18,9 +18,16 @@ const SERVICES: { title: string; description: string; icon: LucideIcon }[] = [
   {
     title: "Supply Chain Management",
     description:
-      "Strategic logistics consulting that maps, optimises, and scales your entire supply chain — cutting costs, reducing lead times, and building resilience into every link.",
+      "Strategic logistics consulting that maps, optimises, and scales your entire supply chain, cutting costs, reducing lead times, and building resilience into every link.",
     icon: Workflow,
   },
+];
+
+// Soft brand tints per service, keeps the section from reading monochrome
+const ICON_TINTS = [
+  "bg-[#d2e6f8] text-[#2474b8]",
+  "bg-[#d3eee0] text-[#2f8f59]",
+  "bg-[#e5d9f6] text-[#7649be]",
 ];
 
 export const Services = () => (
@@ -39,7 +46,11 @@ export const Services = () => (
             index > 0 ? "sm:border-neutral-200 sm:border-l" : ""
           } ${index === 0 ? "sm:pl-0" : ""}`}
         >
-          <span className="flex size-12 items-center justify-center rounded-xl bg-[#EE1C4D]/10 text-[#EE1C4D]">
+          <span
+            className={`flex size-12 items-center justify-center rounded-xl ${
+              ICON_TINTS[index] ?? "bg-[#EE1C4D]/10 text-[#EE1C4D]"
+            }`}
+          >
             <service.icon className="size-6" strokeWidth={1.75} />
           </span>
           <h3 className="font-bold text-[#242527] text-lg">{service.title}</h3>

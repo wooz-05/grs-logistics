@@ -9,9 +9,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "GRS Logistics — Improving efficiency with logistics",
+  title: "GRS Logistics, Improving efficiency with logistics",
   description:
-    "Reliable transport. Real-time tracking. Tailored logistics for your business — by sea, ground, rail, and air.",
+    "Reliable transport. Real-time tracking. Tailored logistics for your business, by sea, ground, rail, and air.",
 };
 
 export default ({ children }: LayoutProps<"/">) => {

@@ -205,7 +205,7 @@ export const SearchBar = () => {
   }, [open]);
 
   const openDate = () => {
-    const [y, m] = date.split("-").map(Number);
+    const [y, m] = parseIso(date);
     setView({ year: y, month: m - 1 });
     setOpen(open === "date" ? null : "date");
   };
@@ -254,7 +254,7 @@ export const SearchBar = () => {
       <LocationField
         value={origin}
         setValue={setOrigin}
-        placeholder="Origin — city, port, ZIP"
+        placeholder="Origin, city, port, ZIP"
         isOpen={open === "origin"}
         requestOpen={() => setOpen("origin")}
         close={() => setOpen(null)}
@@ -274,7 +274,7 @@ export const SearchBar = () => {
       <LocationField
         value={destination}
         setValue={setDestination}
-        placeholder="Destination — city, port, ZIP"
+        placeholder="Destination, city, port, ZIP"
         isOpen={open === "destination"}
         requestOpen={() => setOpen("destination")}
         close={() => setOpen(null)}

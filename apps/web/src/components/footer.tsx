@@ -11,9 +11,9 @@ const FOOTER_LINKS = [
 ];
 
 export const Footer = () => (
-  // Floating rounded panel — mirrors the hero, with an even white gap on all sides
+  // Floating rounded panel, mirrors the hero, with an even white gap on all sides
   <footer className="bg-white p-3 sm:p-4">
-    <div className="overflow-hidden rounded-[28px] bg-[#1c1d1f] text-white">
+    <div className="overflow-hidden rounded-[28px] bg-[#242527] text-white">
       <div className="mx-auto flex w-[min(1180px,calc(100%-3rem))] flex-col gap-8 py-12 sm:flex-row sm:items-center sm:justify-between">
         <Logo className="h-8 w-auto text-white" />
         <ul className="flex flex-wrap gap-x-6 gap-y-3 font-medium text-sm">

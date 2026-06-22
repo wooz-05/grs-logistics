@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-// Grey image placeholder. Real photography will be dropped in later — keeping a
+// Grey image placeholder. Real photography will be dropped in later, keeping a
 // neutral fill with a subtle diagonal hatch so empty slots read as intentional.
 type PlaceholderProps = ComponentProps<"div"> & {
   label?: string;

@@ -25,9 +25,24 @@ const GrsArrow = () => (
 );
 
 const DETAILS = [
-  { icon: Mail, label: "Email us", value: "hello@grslogistics.com" },
-  { icon: Phone, label: "Call us", value: "+1 (555) 018-2200" },
-  { icon: MapPin, label: "Visit us", value: "Pier 17, Harbor Bay, NY 10004" },
+  {
+    icon: Mail,
+    label: "Email us",
+    value: "hello@grslogistics.com",
+    tint: "bg-[#fbdce5] text-[#e04a72]",
+  },
+  {
+    icon: Phone,
+    label: "Call us",
+    value: "+1 (555) 018-2200",
+    tint: "bg-[#d3eee0] text-[#2f8f59]",
+  },
+  {
+    icon: MapPin,
+    label: "Visit us",
+    value: "Pier 17, Harbor Bay, NY 10004",
+    tint: "bg-[#d2e6f8] text-[#2474b8]",
+  },
 ];
 
 const fieldClass =
@@ -39,7 +54,7 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-20 sm:py-28">
       <div className="mx-auto grid w-[min(1180px,calc(100%-2rem))] gap-12 lg:grid-cols-2 lg:gap-20">
-        {/* Left — intro + contact details */}
+        {/* Left, intro + contact details */}
         <div>
           <Reveal>
             <span className="inline-flex items-center gap-1.5 font-medium text-neutral-500 text-sm">
@@ -63,7 +78,9 @@ export const Contact = () => {
             {DETAILS.map((d, i) => (
               <Reveal key={d.label} delay={0.3 + i * 0.08} blur={false}>
                 <div className="flex items-center gap-4">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[#EE1C4D]/10 text-[#EE1C4D]">
+                  <span
+                    className={`flex size-11 shrink-0 items-center justify-center rounded-xl ${d.tint}`}
+                  >
                     <d.icon className="size-5" strokeWidth={1.75} />
                   </span>
                   <div>
@@ -76,7 +93,7 @@ export const Contact = () => {
           </div>
         </div>
 
-        {/* Right — form card */}
+        {/* Right, form card */}
         <Reveal delay={0.15}>
           <form
             onSubmit={(e) => {
@@ -98,15 +115,15 @@ export const Contact = () => {
             <textarea
               rows={5}
               className={`${fieldClass} resize-none`}
-              placeholder="Tell us about your shipment — origin, destination, cargo type…"
+              placeholder="Tell us about your shipment, origin, destination, cargo type…"
               required
             />
             <button
               type="submit"
               disabled={sent}
-              className="mt-2 flex h-12 items-center justify-center rounded-full bg-[#EE1C4D] px-6 font-medium text-sm text-white transition-colors hover:bg-[#d2123f] disabled:cursor-default disabled:bg-emerald-600"
+              className="mt-2 flex h-12 items-center justify-center rounded-full bg-[#EE1C4D] px-6 font-medium text-sm text-white transition-colors hover:bg-[#d2123f] disabled:cursor-default disabled:bg-[#2f8f59]"
             >
-              {sent ? "Thanks — we'll be in touch ✓" : "Send message"}
+              {sent ? "Thanks, we'll be in touch ✓" : "Send message"}
             </button>
           </form>
         </Reveal>

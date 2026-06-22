@@ -12,7 +12,14 @@
   }
 }
 
-/* Vertical marquee — hand-authored (not via @theme) so it doesn't depend on
+/* GRS brand palette (PaletteGRS reference), applied inline via arbitrary
+   values in components, because this project's Tailwind build does NOT emit
+   utilities from @theme color tokens. Kept here only as documentation.
+   Signal #EE1C4D · Graphite #242527 · Cream #faf6f1 · Linen #f2eae5
+   Blush #e04a72 · Peach #e5732b · Butter #ce9e28
+   Mint #2f8f59 · Sky #2474b8 · Lavender #7649be */
+
+/* Vertical marquee, hand-authored (not via @theme) so it doesn't depend on
    Tailwind's content scanning, which was inconsistently pruning it */
 .animate-marquee-y {
   animation: marquee-y 80s linear infinite;

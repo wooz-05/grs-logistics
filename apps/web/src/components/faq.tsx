@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: "How do I track my shipment in real time?",
-    a: "Every booking comes with access to our digital platform, where you can follow your cargo from origin to destination 24/7 — with milestone alerts, ETA updates, and document access in one place.",
+    a: "Every booking comes with access to our digital platform, where you can follow your cargo from origin to destination 24/7, with milestone alerts, ETA updates, and document access in one place.",
   },
   {
     q: "Can you handle customs clearance and documentation?",
@@ -25,7 +25,7 @@ const FAQS = [
   },
   {
     q: "How do I request a quote?",
-    a: "Use the contact form below or reach out directly — share your origin, destination, cargo type, and timeline, and we'll send a tailored quote within one business day.",
+    a: "Use the contact form below or reach out directly, share your origin, destination, cargo type, and timeline, and we'll send a tailored quote within one business day.",
   },
 ];
 
@@ -33,7 +33,7 @@ export const Faq = () => {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="bg-neutral-50 py-20 sm:py-28">
+    <section className="bg-[#faf6f1] py-20 sm:py-28">
       <div className="mx-auto w-[min(1180px,calc(100%-2rem))]">
         <SectionHeader
           tag="FAQ"

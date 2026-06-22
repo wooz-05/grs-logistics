@@ -23,7 +23,7 @@ const MarqueeArrow = () => (
   </svg>
 );
 
-// One repeating segment of the vertical marquee — stacked twice so the
+// One repeating segment of the vertical marquee, stacked twice so the
 // -50% translateY shift loops seamlessly
 const ArrowColumn = () => (
   <div className="flex shrink-0 flex-col items-center">
@@ -71,7 +71,7 @@ const CARDS = [
 
 export const Showcase = () => (
   <section className="relative">
-    {/* Vertical chevron marquee — subtle moving texture behind the left content */}
+    {/* Vertical chevron marquee, subtle moving texture behind the left content */}
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="mx-auto h-full w-[min(1180px,calc(100%-2rem))]">
         <div className="relative h-full w-1/2">
@@ -88,7 +88,7 @@ export const Showcase = () => (
     <div className="relative mx-auto w-[min(1180px,calc(100%-2rem))]">
       <div className="flex flex-col gap-0 lg:flex-row lg:items-start">
 
-        {/* Left — sticky while cards scroll */}
+        {/* Left, sticky while cards scroll */}
         <div className="top-0 py-20 sm:py-28 lg:sticky lg:h-screen lg:w-1/2 lg:flex lg:items-center lg:pr-16">
           <div>
             <Reveal><GrsTag label="Our Capabilities" /></Reveal>
@@ -100,12 +100,12 @@ export const Showcase = () => (
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-6 max-w-md text-neutral-500 text-base leading-relaxed">
-                From first mile to last, we handle every detail — so you can
+                From first mile to last, we handle every detail, so you can
                 focus on growing your business.
               </p>
             </Reveal>
 
-            {/* Key stats — inline, divider-separated for a cleaner read */}
+            {/* Key stats, inline, divider-separated for a cleaner read */}
             <Reveal delay={0.3} blur={false}>
               <div className="mt-10 flex divide-x divide-neutral-200">
                 {[
@@ -127,7 +127,7 @@ export const Showcase = () => (
           </div>
         </div>
 
-        {/* Right — scrolls past the sticky left */}
+        {/* Right, scrolls past the sticky left */}
         <div className="flex flex-col gap-6 py-20 sm:py-28 lg:w-1/2">
           {CARDS.map((card, index) => (
             <Reveal key={card.title} delay={index * 0.1}>

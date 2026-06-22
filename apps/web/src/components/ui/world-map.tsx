@@ -108,7 +108,7 @@ export default function WorldMap({ dots = [], lineColor = "#EE1C4D" }: MapProps)
 
           return (
             <g key={`route-${i}`}>
-              {/* Animated arc — loops: draws in, fades out, repeats */}
+              {/* Animated arc, loops: draws in, fades out, repeats */}
               <motion.path
                 d={createCurvedPath(sp, ep)}
                 fill="none"
@@ -126,7 +126,7 @@ export default function WorldMap({ dots = [], lineColor = "#EE1C4D" }: MapProps)
                 }}
               />
 
-              {/* Origin dot — pulsing hub */}
+              {/* Origin dot, pulsing hub */}
               <circle
                 cx={sp.x} cy={sp.y} r="3" fill={lineColor}
                 className="cursor-pointer"

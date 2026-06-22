@@ -16,7 +16,7 @@ const HeroArrow = () => (
   </svg>
 );
 
-// One repeating segment of arrows — duplicated side by side so the
+// One repeating segment of arrows, duplicated side by side so the
 // -50% marquee shift loops seamlessly
 const ArrowRow = () => (
   <div className="flex shrink-0 items-center">
@@ -29,7 +29,7 @@ const ArrowRow = () => (
 
 export const Hero = () => (
   <section className="bg-white p-3 sm:p-4">
-    {/* Floating rounded hero panel — fills the screen with an even white gap on all sides */}
+    {/* Floating rounded hero panel, fills the screen with an even white gap on all sides */}
     <div className="relative isolate h-[calc(100dvh-1.5rem)] min-h-[600px] overflow-hidden rounded-[28px] bg-neutral-300 sm:h-[calc(100dvh-2rem)]">
       {/* Background video */}
       <video
@@ -43,7 +43,7 @@ export const Hero = () => (
       >
         <source src="/hero.webm" type="video/webm" />
       </video>
-      {/* Darkening layers — a light scrim plus a gradient keep the white
+      {/* Darkening layers, a light scrim plus a gradient keep the white
           headline and search bar readable without dimming the clip too much */}
       <div aria-hidden className="absolute inset-0 bg-[#242527]/30" />
       <div

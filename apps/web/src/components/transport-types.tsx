@@ -32,7 +32,7 @@ export const TransportTypes = () => (
   <section className="mx-auto flex min-h-dvh w-[min(1180px,calc(100%-2rem))] flex-col py-16">
     <SectionHeader
       tag="How We Move"
-      heading={<>Move anything, <span className="text-[#EE1C4D]">anywhere</span> — by any mode</>}
+      heading={<>Move anything, <span className="text-[#EE1C4D]">anywhere</span>, by any mode</>}
     />
     <div className="mt-12 grid flex-1 gap-5 sm:grid-cols-2 sm:grid-rows-2">
       {TRANSPORT.map(({ title, src }, index) => (
