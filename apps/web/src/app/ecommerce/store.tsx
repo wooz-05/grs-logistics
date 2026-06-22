@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { Check, Minus, Plus, ShoppingCart, Star, X } from "lucide-react";
+import { ArrowLeft, Check, Minus, Plus, ShoppingCart, Star, X } from "lucide-react";
 import Link from "next/link";
 import {
   createContext,
@@ -232,14 +232,15 @@ export const StoreHeader = () => {
         <Link href="/ecommerce" aria-label="GRS Logistics home" className="shrink-0">
           <Logo className="h-7 w-auto text-[#242527]" />
         </Link>
-        <Link href="/" className="ml-auto hidden whitespace-nowrap font-medium text-neutral-500 text-sm transition-colors hover:text-[#242527] md:block">
-          Back to site
+        <Link href="/" className="ml-auto flex items-center gap-1.5 whitespace-nowrap font-medium text-neutral-500 text-sm transition-colors hover:text-[#242527]">
+          <ArrowLeft className="size-4" />
+          <span className="hidden sm:inline">Back to site</span>
         </Link>
         <button
           type="button"
           onClick={() => setCartOpen(true)}
           aria-label="Open cart"
-          className="relative ml-auto flex size-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-[#242527] transition-colors hover:bg-neutral-200 md:ml-0"
+          className="relative flex size-10 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-[#242527] transition-colors hover:bg-neutral-200"
         >
           <ShoppingCart className="size-5" />
           {count > 0 && (

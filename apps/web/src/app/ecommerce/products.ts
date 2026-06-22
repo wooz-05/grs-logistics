@@ -45,8 +45,8 @@ export const sku = (id: number) => `GRS-${String(id).padStart(4, "0")}`;
 
 // Trade pricing tiers, applied for business accounts
 export const priceTiers = (price: number) => [
-  { qty: "1+", price },
-  { qty: "5+", price: price * 0.95 },
-  { qty: "10+", price: price * 0.9 },
-  { qty: "25+", price: price * 0.85 },
+  { label: "1 to 4 units", off: 0, price },
+  { label: "5 to 9 units", off: 5, price: price * 0.95 },
+  { label: "10 to 24 units", off: 10, price: price * 0.9 },
+  { label: "25+ units", off: 15, price: price * 0.85 },
 ];

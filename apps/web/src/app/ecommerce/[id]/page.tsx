@@ -103,14 +103,21 @@ export default function ProductDetailPage() {
                 <span className="font-semibold text-[11px] text-neutral-400 uppercase tracking-wider">Trade pricing</span>
                 <span className="h-px flex-1 bg-neutral-200" />
               </div>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="overflow-hidden rounded-2xl border border-neutral-200">
                 {tiers.map((t, i) => (
                   <div
-                    key={t.qty}
-                    className={`rounded-xl border px-2 py-2.5 text-center ${i === 0 ? "border-[#EE1C4D] bg-[#EE1C4D]/5" : "border-neutral-200 bg-white"}`}
+                    key={t.label}
+                    className={`flex items-center justify-between px-4 py-2.5 ${i > 0 ? "border-neutral-100 border-t" : ""} ${i === 0 ? "bg-[#EE1C4D]/5" : ""}`}
                   >
-                    <div className="text-[11px] text-neutral-500">{t.qty}</div>
-                    <div className="font-bold text-[#242527] text-sm tabular-nums">{money(t.price)}</div>
+                    <span className="text-[#242527] text-sm">{t.label}</span>
+                    <div className="flex items-center gap-3">
+                      {t.off > 0 && (
+                        <span className="font-medium text-[#2f8f59] text-xs">Save {t.off}%</span>
+                      )}
+                      <span className="w-20 text-right font-bold text-[#242527] text-sm tabular-nums">
+                        {money(t.price)}
+                      </span>
+                    </div>
                   </div>
                 ))}
               </div>

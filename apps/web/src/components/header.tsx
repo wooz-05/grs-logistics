@@ -1,5 +1,6 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { useRef, useState } from "react";
@@ -20,9 +21,11 @@ const NAV_LINKS: { label: string; href?: string }[] = [
 
 export const Header = () => {
   const [notice, setNotice] = useState<string | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const showNotice = (link: string) => {
+    setMenuOpen(false);
     setNotice(link);
     if (timer.current) clearTimeout(timer.current);
     timer.current = setTimeout(() => setNotice(null), 2800);
@@ -31,7 +34,7 @@ export const Header = () => {
   return (
     <>
       <header className="-translate-x-1/2 absolute top-6 left-1/2 z-20 w-[min(1180px,calc(100%-2rem))] sm:top-8">
-        <nav className="flex items-center gap-4 rounded-full bg-white py-2 pr-2 pl-5 shadow-lg shadow-black/5">
+        <nav className="flex items-center gap-3 rounded-full bg-white py-2 pr-2 pl-5 shadow-lg shadow-black/5">
           <Logo className="h-7 w-auto shrink-0 text-[#242527]" />
           <ul className="mx-auto hidden items-center gap-6 font-medium text-[#242527] text-sm lg:flex">
             {NAV_LINKS.map((link) =>
@@ -64,7 +67,54 @@ export const Header = () => {
           >
             <GlobeIcon className="size-5" />
           </button>
+          <button
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((o) => !o)}
+            className="flex size-9 shrink-0 items-center justify-center rounded-full bg-neutral-100 text-[#242527] transition-colors hover:bg-neutral-200 lg:hidden"
+          >
+            {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </nav>
+
+        {/* Mobile dropdown menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+              className="mt-2 overflow-hidden rounded-3xl bg-white p-2 shadow-lg shadow-black/5 lg:hidden"
+            >
+              {NAV_LINKS.map((link) =>
+                link.href ? (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center justify-between rounded-2xl px-4 py-3 font-semibold text-[#EE1C4D] transition-colors hover:bg-neutral-50"
+                  >
+                    {link.label}
+                    <span className="rounded-full bg-[#EE1C4D]/10 px-2 py-0.5 font-medium text-[10px] text-[#EE1C4D] uppercase tracking-wide">
+                      Live
+                    </span>
+                  </Link>
+                ) : (
+                  <button
+                    key={link.label}
+                    type="button"
+                    onClick={() => showNotice(link.label)}
+                    className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    {link.label}
+                  </button>
+                ),
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
 
       {/* Under-development notice for not-yet-built pages */}

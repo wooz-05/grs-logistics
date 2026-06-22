@@ -69,7 +69,7 @@ const ROUTES = [
 
 export const WorldMapSection = () => (
   <section className="bg-white p-3 sm:p-4">
-    <div className="relative flex h-[calc(100dvh-1.5rem)] min-h-[600px] flex-col overflow-hidden rounded-[28px] bg-[#242527] px-6 py-10 sm:h-[calc(100dvh-2rem)] sm:px-12 sm:py-12">
+    <div className="relative flex flex-col overflow-hidden rounded-[28px] bg-[#242527] px-6 py-12 sm:px-12 lg:h-[calc(100dvh-2rem)] lg:min-h-[600px]">
       <div className="relative z-10 mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))]">
         <SectionHeader
           tag="Global Network"
@@ -77,7 +77,7 @@ export const WorldMapSection = () => (
           light
         />
       </div>
-      <div className="mt-auto flex flex-1 flex-col justify-center gap-4">
+      <div className="mt-8 flex flex-col justify-center gap-4 lg:mt-auto lg:flex-1">
         <div className="mx-auto w-full max-w-[min(1180px,calc(100%-1.5rem))]">
           <WorldMap dots={ROUTES} lineColor="#EE1C4D" />
         </div>
