@@ -11,13 +11,13 @@ const GrsArrow = () => (
 // The GRS arrow mark (same as the hero marquee), stacked for the vertical marquee
 const MarqueeArrow = () => (
   <svg
-    width="80"
-    height="67"
+    width="120"
+    height="100"
     viewBox="0 0 30 25"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden
-    className="mb-[5px] shrink-0"
+    className="mb-[7px] shrink-0"
   >
     <path d="M29.8893 24.855L29.8893 0L4.84439 -1.09475e-06L29.8893 24.855Z" fill="#242527" />
     <path d="M0 16.0262H4.05505C6.93862 16.0262 9.70057 14.8643 11.7172 12.8031L13.075 11.4152L19.434 17.6366L18.0761 19.0243C14.386 22.7961 9.33175 24.9222 4.05505 24.9222H0V16.0262Z" fill="#242527" />
@@ -71,8 +71,8 @@ export const Showcase = () => (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="mx-auto h-full w-[min(1180px,calc(100%-2rem))]">
         <div className="relative h-full w-1/2">
-          <div className="absolute inset-y-0 left-0 flex w-24 justify-center overflow-hidden opacity-[0.05]">
-            <div className="flex h-max shrink-0 flex-col animate-arrow-marquee-vertical">
+          <div className="absolute inset-y-0 left-0 flex w-32 justify-center overflow-hidden opacity-[0.03]">
+            <div className="flex h-max shrink-0 flex-col animate-marquee-y">
               <ArrowColumn />
               <ArrowColumn />
             </div>

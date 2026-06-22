@@ -4,17 +4,22 @@
 @theme inline {
   --font-body: var(--font-geist);
   --animate-arrow-marquee: arrow-marquee 80s linear infinite;
-  --animate-arrow-marquee-vertical: arrow-marquee-vertical 80s linear infinite;
 
   @keyframes arrow-marquee {
     to {
       transform: translateX(-50%);
     }
   }
+}
 
-  @keyframes arrow-marquee-vertical {
-    to {
-      transform: translateY(-50%);
-    }
+/* Vertical marquee — hand-authored (not via @theme) so it doesn't depend on
+   Tailwind's content scanning, which was inconsistently pruning it */
+.animate-marquee-y {
+  animation: marquee-y 80s linear infinite;
+}
+
+@keyframes marquee-y {
+  to {
+    transform: translateY(-50%);
   }
 }
