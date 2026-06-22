@@ -12,7 +12,7 @@ const NAV_LINKS = [
 ];
 
 export const Header = () => (
-  <header className="-translate-x-1/2 absolute top-5 left-1/2 z-20 w-[min(1180px,calc(100%-2rem))]">
+  <header className="-translate-x-1/2 absolute top-6 left-1/2 z-20 w-[min(1180px,calc(100%-2rem))] sm:top-8">
     <nav className="flex items-center gap-4 rounded-full bg-white py-2 pr-2 pl-5 shadow-lg shadow-black/5">
       <Logo className="h-7 w-auto shrink-0 text-[#242527]" />
       <ul className="mx-auto hidden items-center gap-6 font-medium text-[#242527] text-sm lg:flex">
