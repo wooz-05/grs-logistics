@@ -1,19 +1,21 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 import { useRef, useState } from "react";
 import { GlobeIcon } from "./icons";
 import { Logo } from "./logo";
 
-const NAV_LINKS = [
-  "About Us",
-  "Services",
-  "E-Commerce",
-  "Transportations",
-  "Directions",
-  "Resources",
-  "Career",
-  "Contacts",
+// E-Commerce is a live page; the rest are placeholders that show a notice.
+const NAV_LINKS: { label: string; href?: string }[] = [
+  { label: "E-Commerce", href: "/ecommerce" },
+  { label: "About Us" },
+  { label: "Services" },
+  { label: "Transportations" },
+  { label: "Directions" },
+  { label: "Resources" },
+  { label: "Career" },
+  { label: "Contacts" },
 ];
 
 export const Header = () => {
@@ -32,17 +34,28 @@ export const Header = () => {
         <nav className="flex items-center gap-4 rounded-full bg-white py-2 pr-2 pl-5 shadow-lg shadow-black/5">
           <Logo className="h-7 w-auto shrink-0 text-[#242527]" />
           <ul className="mx-auto hidden items-center gap-6 font-medium text-[#242527] text-sm lg:flex">
-            {NAV_LINKS.map((link) => (
-              <li key={link}>
-                <button
-                  type="button"
-                  onClick={() => showNotice(link)}
-                  className="whitespace-nowrap text-neutral-600 transition-colors hover:text-[#EE1C4D]"
-                >
-                  {link}
-                </button>
-              </li>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.href ? (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="whitespace-nowrap font-semibold text-[#EE1C4D] transition-colors hover:text-[#d2123f]"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.label}>
+                  <button
+                    type="button"
+                    onClick={() => showNotice(link.label)}
+                    className="whitespace-nowrap text-neutral-600 transition-colors hover:text-[#EE1C4D]"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ),
+            )}
           </ul>
           <button
             type="button"
