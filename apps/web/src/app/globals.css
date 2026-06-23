@@ -3,7 +3,7 @@
 
 @theme inline {
   --font-body: var(--font-geist);
-  --animate-arrow-marquee: arrow-marquee 80s linear infinite;
+  --animate-arrow-marquee: arrow-marquee 120s linear infinite;
 
   @keyframes arrow-marquee {
     to {
